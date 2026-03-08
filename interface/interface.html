@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Login / Cadastro de Produtos</title>
+<link rel="stylesheet" href="../interface/style.css">
+</head>
+<body>
+
+<div id="login-container" class="container">
+  <h2>Login</h2>
+  <input type="email" placeholder="Email" id="login-email">
+  <input type="password" placeholder="Senha" id="login-senha">
+  <button onclick="logar()">Logar</button>
+</div>
+
+<div id="cadastro-container" class="container hidden">
+
+<h2>Cadastro de Produtos</h2>
+
+<form id="form-produtos">
+
+<input type="text" placeholder="Código do Produto" id="codigo" required>
+<input type="text" placeholder="Marca do Produto" id="marca" required>
+<input type="text" placeholder="Tipo do Produto" id="tipo" required>
+<input type="text" placeholder="Categoria do Produto" id="categoria" required>
+<input type="number" placeholder="Preço Unitário do Produto" id="preco" step="0.01" required>
+<input type="number" placeholder="Custo do Produto" id="custo" step="0.01" required>
+<textarea placeholder="Observações" id="obs"></textarea>
+
+<div class="button-row">
+<button type="submit">Enviar</button>
+<button type="button" onclick="limparCampos()">Limpar</button>
+</div>
+
+</form>
+
+<p id="mensagem" style="color:green; display:none; text-align:center; margin-top:10px;">
+Produto cadastrado com sucesso!
+</p>
+
+<h3>Produtos cadastrados</h3>
+
+<table border="1" width="100%" id="tabela-produtos">
+<thead>
+<tr>
+<th>Código</th>
+<th>Marca</th>
+<th>Tipo</th>
+<th>Categoria</th>
+<th>Preço</th>
+<th>Custo</th>
+<th>Obs</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div>
+
+<script>
+function logar() {
+  document.getElementById("login-container").classList.add("hidden");
+  document.getElementById("cadastro-container").classList.remove("hidden");
+}
+
+document.getElementById("form-produtos").addEventListener("submit", function(e) {
+  e.preventDefault(); 
+
+  let codigo = document.getElementById("codigo").value;
+  let marca = document.getElementById("marca").value;
+  let tipo = document.getElementById("tipo").value;
+  let categoria = document.getElementById("categoria").value;
+  let preco = document.getElementById("preco").value;
+  let custo = document.getElementById("custo").value;
+  let obs = document.getElementById("obs").value;
+
+  let tabela = document.getElementById("tabela-produtos").getElementsByTagName("tbody")[0];
+  let novaLinha = tabela.insertRow();
+
+  novaLinha.insertCell(0).innerText = codigo;
+  novaLinha.insertCell(1).innerText = marca;
+  novaLinha.insertCell(2).innerText = tipo;
+  novaLinha.insertCell(3).innerText = categoria;
+  novaLinha.insertCell(4).innerText = preco;
+  novaLinha.insertCell(5).innerText = custo;
+  novaLinha.insertCell(6).innerText = obs;
+
+  mostrarMensagem();
+
+  limparCampos();
+});
+
+function limparCampos() {
+  document.getElementById("form-produtos").reset();
+}
+
+function mostrarMensagem() {
+  let msg = document.getElementById("mensagem");
+  msg.style.display = "block";
+
+  setTimeout(function(){
+    msg.style.display = "none";
+  }, 2000);
+}
+</script>
+
+</body>
+</html>

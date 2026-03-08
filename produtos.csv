@@ -1,0 +1,14 @@
+codigo,marca,tipo,categoria,preco_unitario,custo,obs
+MOLO000251,Logitech,Mouse,1,25.95,6.50,
+MOLO000192,Logitech,Mouse,2,19.95,5.00,
+TELG000821,LG,Televisao,1,820.00,172.20,
+TELG000252,LG,Televisao,2,250.00,62.50,
+TESA000125,Samsung,Galaxy Gran Prime,5,1260.00,378.00,
+TESA000346,Samsung,Galaxy Gran Prime,6,1240.00,271.40,
+TEAO0002511,AOC,Televisao,11,250.00,62.50,
+TEAO0003612,AOC,Televisao,12,360.00,97.20,
+TETO0006015,Toshiba,Televisao,15,600.00,144.00
+TESA000346,Samsung,Galaxy Gran Prime,6,1240.00,271.40,
+TEAO0002511,AOC,Televisao,11,250.00,62.50,
+TEAO0003612,AOC,Televisao,12,360.00,97.20,
+TETO0006015,Toshiba,Televisao,15,600.00,144.00
